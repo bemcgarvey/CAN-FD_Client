@@ -1,5 +1,5 @@
 #include "usbdevice.h"
-#include <SetupAPI.h>
+#include <setupapi.h>
 #include <cfgmgr32.h>
 #include <QDebug>
 

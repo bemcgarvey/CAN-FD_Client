@@ -74,7 +74,7 @@ QString USBDevice::getDevicePath() {
                                                    CM_GET_DEVICE_INTERFACE_LIST_PRESENT);
 
             if (cr != CR_SUCCESS) {
-                hr = HRESULT_FROM_WIN32(CM_MapCrToWin32Err(cr, ERROR_INVALID_DATA));
+                hr = HRESULT_FROM_WIN32(ERROR_INVALID_DATA);
                 break;
             }
 
@@ -97,7 +97,7 @@ QString USBDevice::getDevicePath() {
                 HeapFree(GetProcessHeap(), 0, DeviceInterfaceList);
 
                 if (cr != CR_BUFFER_SMALL) {
-                    hr = HRESULT_FROM_WIN32(CM_MapCrToWin32Err(cr, ERROR_INVALID_DATA));
+                    hr = HRESULT_FROM_WIN32(ERROR_INVALID_DATA);
                 }
             }
         } while (cr == CR_BUFFER_SMALL);

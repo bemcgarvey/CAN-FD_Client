@@ -99,8 +99,9 @@ QVariant TxTreeModel::data(const QModelIndex &index, int role) const {
 }
 
 Qt::ItemFlags TxTreeModel::flags(const QModelIndex &index) const {
-    if (!index.isValid())
-        return nullptr;
+    if (!index.isValid()) {
+        return Qt::NoItemFlags;
+    }
     Qt::ItemFlags f = QAbstractItemModel::flags(index);
     TxTreeItem *item = static_cast<TxTreeItem*>(index.internalPointer());
     if (item->ItemType() == TxTreeItem::MSG) {

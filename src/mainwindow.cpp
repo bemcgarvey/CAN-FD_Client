@@ -240,7 +240,7 @@ void MainWindow::updateStatusBar() {
     if (status.busState & ToolStatus::RX_WARN) {
         pal.setColor(QPalette::Window, Qt::lightGray);
     } else if (status.busState & ToolStatus::RX_PASSIVE) {
-        pal.setColor(QPalette::Background, Qt::yellow);
+        pal.setColor(QPalette::Window, Qt::yellow);
     } else {
         pal.setColor(QPalette::Window, Qt::white);
     }

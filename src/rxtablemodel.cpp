@@ -2,6 +2,7 @@
 #include <QColor>
 #include <QBrush>
 #include <QDebug>
+#include <QTextStream>
 
 RxTableModel::RxTableModel(QObject *parent) : QAbstractTableModel(parent)
 {
@@ -312,21 +313,21 @@ RxTableModel::DataTypes RxTableModel::GetDataType(int row) {
 
 void RxTableModel::ToCsv(QTextStream &out)
 {
-    out << "Id, IDE, RTR, FDF, BRS, DLC, Time Stamp, Data" << endl;
+    out << "Id, IDE, RTR, FDF, BRS, DLC, Time Stamp, Data" << Qt::endl;
     for (int i = 0; i < messages.length(); ++i) {
         if (idDisplay[i] == HEX) {
-            out << hex << showbase;
+            out << Qt::hex << Qt::showbase;
         } else {
-            out << dec << noshowbase;
+            out << Qt::dec << Qt::noshowbase;
         }
         out << messages[i].id <<",";
-        out << dec << noshowbase;
+        out << Qt::dec << Qt::noshowbase;
         out << (messages[i].ide ? "1" : "0") << ",";
         out << (messages[i].rtr ? "1" : "0") << ",";
         out << (messages[i].fdf ? "1" : "0") << ",";
         out << (messages[i].brs ? "1" : "0") << ",";
         out << messages[i].dlc << ",";
         out << (messages[i].timeStamp - messages[0].timeStamp) / 1000000.0 << ",";
-        out << dataString(i, &messages[i]) << endl;
+        out << dataString(i, &messages[i]) << Qt::endl;
     }
 }

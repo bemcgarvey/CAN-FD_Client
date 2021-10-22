@@ -11,6 +11,7 @@ TxDataFrame::TxDataFrame(QWidget *parent) :
     ui->setupUi(this);
     setAutoFillBackground(true);
     previousSize = 0;
+    header.clear();
     for (int i = 0; i < 8; ++i) {
         header += QString().number(i);
     }
@@ -142,6 +143,7 @@ void TxDataFrame::setupEdits(int type) {
             ui->table->setColumnWidth(i, width);
         }
         ui->table->setVerticalHeaderLabels(header);
+        ui->table->setHorizontalHeaderLabels(header);
         uint8_t *d = data;
         for (int r = 0; r < rows; ++r) {
             for (int c = 0; c < columns; ++c) {

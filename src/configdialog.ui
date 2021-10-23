@@ -6,183 +6,194 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>351</width>
-    <height>315</height>
+    <width>284</width>
+    <height>172</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Configure Hardware</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>20</y>
-     <width>331</width>
-     <height>261</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <layout class="QFormLayout" name="formLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Nominal Baud</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>Mode</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QComboBox" name="nominalBaudComboBox">
-        <item>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label">
          <property name="text">
-          <string>50 kbps</string>
+          <string>Nominal Baud</string>
          </property>
-        </item>
-        <item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="nominalBaudComboBox">
+         <item>
+          <property name="text">
+           <string>50 kbps</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>100 kbps</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>125 kbps</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>250 kbps</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>500 kbps</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>800 kbps</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1 Mbps</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>100 kbps</string>
+          <string>CAN FD Data Rate</string>
          </property>
-        </item>
-        <item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="dataBaudComboBox">
+         <item>
+          <property name="text">
+           <string>500 kbps</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1 Mbps</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>2 Mbps</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>5 Mbps</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>8 Mbps</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>125 kbps</string>
+          <string>Mode</string>
          </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>250 kbps</string>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="modeComboBox">
+         <item>
+          <property name="text">
+           <string>CAN FD Mode</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>CAN 2.0 Mode</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Listen Only Mode</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Restricted Mode</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Internal Loopback Mode</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>External Loopback Mode</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Config Mode</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
          </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>500 kbps</string>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
          </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>800 kbps</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>1 Mbps</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QComboBox" name="modeComboBox">
-        <item>
-         <property name="text">
-          <string>CAN FD Mode</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>CAN 2.0 Mode</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Listen Only Mode</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Restricted Mode</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Internal Loopback Mode</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>External Loopback Mode</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Config Mode</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>CAN FD Data Rate</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QComboBox" name="dataBaudComboBox">
-        <item>
-         <property name="text">
-          <string>500 kbps</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>1 Mbps</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>2 Mbps</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>5 Mbps</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>8 Mbps</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="2" column="0" colspan="2">
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>60</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QDialogButtonBox" name="buttonBox">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="standardButtons">
-       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-      </property>
-      <property name="centerButtons">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+     <property name="centerButtons">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections>

@@ -1,5 +1,6 @@
 #include "toolstatus.h"
 #include "mcp2517fd.h"
+#include <QDebug>
 
 ToolStatus::ToolStatus()
 {
@@ -12,7 +13,7 @@ void ToolStatus::Update(USBDevice *usb) {
     if (!usb->IsConnected()) {
         return;
     }
-    uint8_t data[6];
+    uint8_t data[8];
     usb->ReadControl(GET_STATUS, data, 8);
     errorFlags = data[0];
     busState = data[1];
@@ -34,7 +35,7 @@ void HardwareInfo::Update(USBDevice *usb) {
     if (!usb->IsConnected()) {
         return;
     }
-    uint8_t data[6];
+    uint8_t data[8];
     usb->ReadControl(GET_HARDWARE_INFO, data, 8);
     nominalBaud = data[0];
     dataBaud = data[1];

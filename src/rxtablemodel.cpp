@@ -159,7 +159,7 @@ void RxTableModel::AddMessage(RxMessage *m) {
     } else {
         fixedRow = fixedIds.length();
         fixedIds.append(id);
-        fixedEntry e = {1, messages.length(), fixedRow};
+        fixedEntry e = {1, static_cast<int>(messages.length()), fixedRow};
         fixedList.insert(id, e);
     }
     if (!paused && willInsertRow) {

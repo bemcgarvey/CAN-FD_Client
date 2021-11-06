@@ -33,7 +33,7 @@ bool RxDataColumnDelegate::editorEvent(QEvent *event, QAbstractItemModel *model,
                 menu->actions().at(i)->setChecked(false);
             }
             menu->actions().at(mod->GetDataType(index.row()))->setChecked(true);
-            QAction *result = menu->exec(me->globalPos());
+            QAction *result = menu->exec(me->globalPosition().toPoint());
             if (result != nullptr) {
                 if (result->text() == "bytes") {
                     mod->SetDataType(index.row(), RxTableModel::BYTE);

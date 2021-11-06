@@ -40,6 +40,7 @@ bool USBDevice::Open() {
     int timeout = 100;
     BOOL value = TRUE;
     BOOL result;
+    Q_UNUSED(result)
     result = WinUsb_SetPipePolicy(winUSBHandle, RXFIFO, RAW_IO, sizeof(value), &value);
     result = WinUsb_SetPipePolicy(winUSBHandle, RXFIFO, PIPE_TRANSFER_TIMEOUT, sizeof(int), &timeout);
     return true;

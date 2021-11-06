@@ -34,7 +34,7 @@ bool TxDataDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, const
             if (currentItem->ItemType() == TxTreeItem::GROUP) {
                 return true;
             }
-            QPoint pos = me->globalPos();
+            QPoint pos = me->globalPosition().toPoint();
             QWidget *parent = dynamic_cast<QWidget *>(this->parent());
             pos = parent->mapFromGlobal(pos);
             if (pos.ry() + frame->height() > parent->height()) {
@@ -55,7 +55,7 @@ bool TxDataDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, const
                 menu->actions().at(i)->setChecked(false);
             }
             menu->actions().at(currentItem->GetDataDisplayType())->setChecked(true);
-            QAction *result = menu->exec(me->globalPos());
+            QAction *result = menu->exec(me->globalPosition().toPoint());
             TxTreeItem::DataDisplayType type;
             if (result != nullptr) {
                 if (result->text() == "bytes") {

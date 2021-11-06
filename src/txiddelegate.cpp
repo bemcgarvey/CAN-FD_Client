@@ -28,7 +28,7 @@ bool TxIdDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, const Q
                 menu->actions().at(1)->setChecked(true);
                 menu->actions().at(0)->setChecked(false);
             }
-            QAction *result = menu->exec(me->globalPos());
+            QAction *result = menu->exec(me->globalPosition().toPoint());
             if (result != nullptr) {
                 TxTreeItem::IdDisplayType type;
                 if (result->text() == "Hex") {

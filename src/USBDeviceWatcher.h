@@ -16,16 +16,12 @@ public:
 signals:
     void connected(void);
     void removed(void);
-
-protected:
-    bool nativeEvent(const QByteArray &eventType, void *message, long *result);
-
 private:
     QString pid;
     QString vid;
     void *DeviceNotificationHandle;
-
-    // QObject interface
+protected:
+    virtual bool nativeEvent(const QByteArray &eventType, void *message, qintptr *result) override;
 };
 
 #endif // QHIDWATCHER_H

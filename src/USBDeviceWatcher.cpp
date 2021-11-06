@@ -24,8 +24,8 @@ USBDeviceWatcher::~USBDeviceWatcher(void) {
     UnregisterDeviceNotification(DeviceNotificationHandle);
 }
 
-
-bool USBDeviceWatcher::nativeEvent(const QByteArray &eventType, void *message, long *result) {
+bool USBDeviceWatcher::nativeEvent(const QByteArray &eventType, void *message, qintptr *result)
+{
     Q_UNUSED(eventType);
     Q_UNUSED(result);
     MSG *msg = reinterpret_cast<MSG *>(message);
@@ -56,4 +56,3 @@ bool USBDeviceWatcher::nativeEvent(const QByteArray &eventType, void *message, l
     }
     return false;
 }
-
